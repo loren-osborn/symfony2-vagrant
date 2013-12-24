@@ -186,11 +186,13 @@ class composer {
     exec { 'install composer php dependency management':
         command => 'curl -s http://getcomposer.org/installer | php -- --install-dir=/usr/bin && mv /usr/bin/composer.phar /usr/bin/composer',
         creates => '/usr/bin/composer',
+        environment => ["HOME=/home/vagrant", "COMPOSER_HOME=/home/vagrant"],
         require => [Package['php5-cli'], Package['curl']],
     }
 
     exec { 'composer self update':
         command => 'composer self-update',
+        environment => ["HOME=/home/vagrant", "COMPOSER_HOME=/home/vagrant"],
         require => [Package['php5-cli'], Package['curl'], Exec['install composer php dependency management']],
     }
 }

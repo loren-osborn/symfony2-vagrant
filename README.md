@@ -2,7 +2,7 @@
 
 
 ## Installation
-####This setup is based and tested with Ubuntu Precise 64 bit base box, with Vagrant 1.0.5 version (should be vorking with 1.1)
+####This setup is based and tested with Ubuntu Saucy Salamander 64 bit nightly build base box, with Vagrant 1.4.1 and VirtualBox 4.3.6
 
 * Install Vagrant using using the [installation instructions](http://docs.vagrantup.com/v2/installation/index.html)
 * Clone this repository
@@ -12,12 +12,15 @@
 * install git submodules
     ```$ git submodule update --init```
 
-* run vagrant (for the first time it should take up to 10-15 min)
+* install required vagrant plugin
+    ```$ vagrant plugin install vbguest```
+
+* run vagrant (for the first time it should take up to 20-45 min)
     ```$ vagrant up```
     
-* Web server is accessible with http://33.33.33.100 (IP address can be changed in Vagrantfile)
+* Web server is accessible with http://10.33.33.10 (IP address can be changed in Vagrantfile)
 
-* PhpMyAdmin is accessible with http://33.33.33.100/phpmyadmin
+* PhpMyAdmin is accessible with http://10.33.33.10/phpmyadmin
 
 * Vagrant automatically setups database with this setup:
 
